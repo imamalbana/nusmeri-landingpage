@@ -212,23 +212,27 @@ export default function Example() {
             <h3 className="text-lg font-semibold leading-6 text-white">
               Hubungi Kami
             </h3>
-            <div className="mt-4 text-sm text-gray-300 flex flex-col space-y-4 sm:w-[60%]">
+            {/* <div className="mt-4 text-sm text-gray-300 flex flex-col space-y-4 sm:w-[60%]">
               <div className="flex flex-col">
                 <span className="font-medium text-gray-300">Email</span>
-                <span className="text-gray-400">
-                  info@fajarmediapratama.com
+                 <Link
+                  to="mailto:alamat@email.com"
+                  className="text-gray-400"
+                >
+                  081280330406
+                </Link>
                 </span>
               </div>
               <div className="flex flex-col">
                 <span className="font-medium text-gray-300">Telepon</span>
                 <Link
-                  to="https://wa.me/62895341946772"
+                  to="https://wa.me/"
                   className="text-gray-400"
                 >
                   081280330406
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Copyright */}
