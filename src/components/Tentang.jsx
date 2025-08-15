@@ -10,7 +10,7 @@ import React from "react";
  * Style: clean white, blue accents, minimal borders/shadows.
  */
 
-export default function AboutWhiteBlueRows() {
+export default function Tentang() {
   const services = [
     {
       title: "Network Architecture",
@@ -35,7 +35,7 @@ export default function AboutWhiteBlueRows() {
           <div className="flex justify-center items-center  px-6 w-full">
             <div className="text-center w-full">
               <div className="text-xl font-semibold leading-7 text-indigo-600">
-                Who Are We
+                Siapa Kita?
               </div>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
                 Kami memberikan solusi jaringan yang dapat diandalkan.
@@ -93,7 +93,7 @@ export default function AboutWhiteBlueRows() {
                 </svg>
               </span>
               <h3 className="text-xl font-semibold leading-7 text-indigo-600">
-                Our Mission
+                Misi Kami
               </h3>
             </div>
             <p className="mt-3 text-sm text-gray-600 leading-7">
@@ -132,7 +132,7 @@ export default function AboutWhiteBlueRows() {
                 </svg>
               </span>
               <h3 className="text-xl font-semibold leading-7 text-indigo-600">
-                Our Vision
+                Visi Kami
               </h3>
             </div>
             <p className="mt-3 text-sm text-gray-600 leading-7">
@@ -160,7 +160,7 @@ export default function AboutWhiteBlueRows() {
           {/* Left intro */}
           <div className="flex-1 flex items-center flex-col">
             <div className="inline-flex items-center gap-2 text-xl font-semibold leading-7 text-indigo-600">
-              Our Services
+              Layanan Kami
             </div>
             <h3 className="mt-4 text-3xl font-semibold tracking-tight">
               Layanan modular,{" "}

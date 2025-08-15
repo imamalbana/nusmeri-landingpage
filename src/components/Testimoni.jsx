@@ -27,7 +27,7 @@ const testimonials = [
   },
 ];
 
-export default function Testimonials() {
+export default function Testimoni() {
   return (
     <div className="py-20 sm:py-28">
       <div className="max-w-7xl mx-auto text-center px-6">

@@ -5,7 +5,7 @@ import {
   WrenchIcon,
 } from "@heroicons/react/24/solid";
 
-const ITProductsServices = () => {
+const ProdukLayanan = () => {
   return (
     <section id="pro" className="py-20 bg-white">
       <div className="w-full mx-auto px-6 max-w-screen-xl">
@@ -77,4 +77,4 @@ const ITProductsServices = () => {
   );
 };
 
-export default ITProductsServices;
+export default ProdukLayanan;

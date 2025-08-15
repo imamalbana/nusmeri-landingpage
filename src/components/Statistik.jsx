@@ -6,7 +6,7 @@ const stats = [
   { id: 4, name: "Solusi Bisnis", value: "Ribuan" },
 ];
 
-export default function Stats() {
+export default function Statistik() {
   return (
     <div className="bg-white  py-27 sm:py-35 ">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function ValueSection() {
+export default function Value() {
   return (
     <div className="bg-white py-20 sm:py-28">
       <div className="max-w-7xl mx-auto text-center px-6">
         {/* Heading */}
         <h2 className="text-4xl font-semibold text-gray-900 sm:text-5xl mb-8">
-          Our Value
+          Keunggulan Kami{" "}
         </h2>
         <p className="text-lg text-gray-600 max-w-4xl mx-auto mb-16">
           Keunggulan PT Fajar Media Pratama terletak pada kombinasi antara

@@ -1,22 +1,22 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import About from "./components/About";
+import Tentang from "./components/Tentang";
 import { Link } from "react-router-dom";
-import Pricing from "./components/Pricing";
-import ValueSection from "./components/Values";
-import ITProductsServices from "./components/ProductServices";
-import Stats from "./components/Stats";
-import Testimonials from "./components/Testimonials";
+import Harga from "./components/Harga";
+import Value from "./components/Value";
+import ProdukLayanan from "./components/ProdukLayanan";
+import Statistik from "./components/Statistik";
+import Testimoni from "./components/Testimoni";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import "./App.css";
 
 const navigation = [
   { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Product", href: "#product" },
-  { name: "Price", href: "#price" },
-  { name: "Contact", href: "#contact" },
+  { name: "Tentang", href: "#about" },
+  { name: "Produk", href: "#product" },
+  { name: "Harga", href: "#price" },
+  { name: "Kontak", href: "#contact" },
 ];
 
 function classNames(...classes) {
@@ -158,33 +158,25 @@ export default function Example() {
                     href="#about"
                     className="w-full sm:w-auto rounded-md bg-indigo-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400 transition-colors"
                   >
-                    About Us
+                    Tentang Kami
                   </a>
                   <a
                     href="#contact"
                     className="w-full sm:w-auto text-sm font-semibold leading-6 text-white hover:text-indigo-300 transition-colors text-center"
                   >
-                    Contact Us <span aria-hidden="true">→</span>
+                    Hubungi Kami <span aria-hidden="true">→</span>
                   </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        {/* About section */}
-        <About />
-        <div className=" h-screen flex items-center justify-center">
-          <ValueSection />
-        </div>
-        {/* Product section */}
-        <ITProductsServices />
-        {/* Stats section */}
-        <div className="mt-25 h-[85%] flex items-center justify-center">
-          <Stats />
-        </div>
-        {/* Testimonials section */}
-        <Testimonials />
+        <Tentang />
+        <Value />
+        <Harga />
+        <ProdukLayanan />
+        <Statistik />
+        <Testimoni />
       </main>
 
       {/* Footer */}

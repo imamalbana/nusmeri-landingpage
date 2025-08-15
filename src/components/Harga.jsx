@@ -49,11 +49,11 @@ const tiers = [
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
-function Pricing() {
+function Harga() {
   return (
     <div
       id="price"
-      className="relative isolate mt-32 bg-white px-6 sm:mt-56 lg:px-8"
+      className="relative isolate my-32 bg-white px-6 sm:mt-56 lg:px-8"
     >
       <div
         aria-hidden="true"
@@ -69,7 +69,7 @@ function Pricing() {
       </div>
       <div className="mx-auto max-w-2xl text-center lg:max-w-4xl">
         <h2 className="text-base font-semibold leading-7 text-indigo-600">
-          Pricing
+          Harga
         </h2>
         <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Pilih Paket Internet Terbaik Sesuai Kebutuhanmu
@@ -178,4 +178,4 @@ function Pricing() {
   );
 }
 
-export default Pricing;
+export default Harga;
