@@ -204,27 +204,24 @@ export default function Example() {
             <h3 className="text-lg font-semibold leading-6 text-white">
               Hubungi Kami
             </h3>
-            {/* <div className="mt-4 text-sm text-gray-300 flex flex-col space-y-4 sm:w-[60%]">
+            <div className="mt-4 text-sm text-gray-300 flex flex-col space-y-4 sm:w-[60%]">
               <div className="flex flex-col">
                 <span className="font-medium text-gray-300">Email</span>
-                 <Link
-                  to="mailto:alamat@email.com"
+                <a
+                  href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=info@nusamer.com
+"
                   className="text-gray-400"
                 >
-                  081280330406
-                </Link>
-                </span>
+                  info@nusamer.com
+                </a>
               </div>
               <div className="flex flex-col">
                 <span className="font-medium text-gray-300">Telepon</span>
-                <Link
-                  to="https://wa.me/"
-                  className="text-gray-400"
-                >
-                  081280330406
+                <Link to="https://wa.me/628111378550" className="text-gray-400">
+                  62+ 81280330406
                 </Link>
               </div>
-            </div> */}
+            </div>
           </div>
 
           {/* Copyright */}
