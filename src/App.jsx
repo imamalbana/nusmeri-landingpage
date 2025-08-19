@@ -218,7 +218,7 @@ export default function Example() {
               <div className="flex flex-col">
                 <span className="font-medium text-gray-300">Telepon</span>
                 <Link to="https://wa.me/628111378550" className="text-gray-400">
-                  62+ 81280330406
+                  +6281280330406
                 </Link>
               </div>
             </div>
