@@ -208,11 +208,11 @@ export default function Example() {
               <div className="flex flex-col">
                 <span className="font-medium text-gray-300">Email</span>
                 <a
-                  href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=info@nusamer.com
+                  href="https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=info@nusameri.com
 "
                   className="text-gray-400"
                 >
-                  info@nusamer.com
+                  info@nusameri.com
                 </a>
               </div>
               <div className="flex flex-col">
