@@ -1,191 +1,215 @@
 import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import mobile from "../animations/No_Mobile_Internet.json";
+import Lottie from "lottie-react";
 
 /**
- * AboutWhiteBlueRows.jsx
- * 3 sections (row layout on desktop):
- * 1) Who Are We  (left text, right visual)
- * 2) Mission & Vision (2 cards side-by-side in one row)
- * 3) Our Services (left intro, right service list cards)
- *
- * Style: clean white, blue accents, minimal borders/shadows.
+ * Tentang.jsx — Minimal • Modern (Who We Are + Ilustrasi + Visi & Misi)
+ * - Bleed container sama seperti Hero (px-4 sm:px-6 lg:px-0)
+ * - Aksen gradient tipis (tanpa foto/hero)
+ * - Micro-interaction halus (hover & reveal)
  */
 
 export default function Tentang() {
-  const services = [
-    {
-      title: "Network Architecture",
-      desc: "Desain arsitektur sederhana, scalable, dan siap HA.",
+  const prefersReduced = useReducedMotion();
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.05 },
     },
-    {
-      title: "Managed Operations",
-      desc: "Monitoring 24/7, incident response, & tuning performa.",
+  };
+  const item = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] },
     },
-    {
-      title: "Cloud & Security",
-      desc: "Integrasi cloud, zero-trust, observability terpadu.",
-    },
-  ];
+  };
 
   return (
-    <div id="about" className="bg-white text-slate-900">
-      <main className="mx-auto max-w-7xl px-6 py-16 lg:py-24 space-y-24">
-        {/* ===== 1) WHO ARE WE ===== */}
-        <section className="flex flex-col gap-10 lg:flex-row lg:items-center items-center ">
-          {/* Left: text */}
-          <div className="flex justify-center items-center  px-6 w-full">
-            <div className="text-center w-full">
-              <div className="text-xl font-semibold leading-7 text-indigo-600">
+    <section id="about" className="bg-white text-slate-900">
+      <main className="w-full px-4 sm:px-6 lg:px-0 py-20 lg:py-28 space-y-24">
+        {/* ========== 1) WHO WE ARE ========== */}
+        <section className="relative">
+          {/* Decorative ring gradient (lebih modern dari blob) */}
+          <motion.div
+            aria-hidden
+            className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[conic-gradient(from_180deg,theme(colors.orange.200/30),transparent_50%)] blur-[80px]"
+            animate={prefersReduced ? undefined : { rotate: [0, 20, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-16">
+            {/* Kiri — Siapa Kita */}
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.35 }}
+              className="order-2 lg:order-1 lg:pl-16 xl:pl-24 2xl:pl-32"
+            >
+              <motion.div
+                variants={item}
+                className="inline-flex items-center gap-2 rounded-full border border-orange-200/70 bg-white px-3 py-1 text-[11px] font-medium text-orange-700"
+              >
+                <span className="inline-block h-1.5 w-1.5 rounded-full bg-orange-500" />
                 Siapa Kita?
-              </div>
-              <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Kami memberikan solusi jaringan yang dapat diandalkan.
-              </h2>
-              <p className="mt-7 max-w-xl text-sm text-gray-600 leading-7 mx-auto">
-                PT Nusanet Media Mandiri adalah perusahaan terkemuka dalam
-                menyediakan solusi IT dan telekomunikasi yang inovatif di
-                Indonesia. Sejak berdiri kami telah menjadi pilihan utama bagi
-                mereka yang mengutamakan kehandalan dan kualitas dalam layanan
-                teknologi dan telekomunikasi.
-              </p>
+              </motion.div>
 
-              {/* Facts */}
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 max-w-lg mx-auto gap-6">
+              <motion.h2
+                variants={item}
+                className="mt-4 text-[clamp(28px,4vw,40px)] font-semibold leading-tight tracking-tight"
+              >
+                Solusi jaringan yang{" "}
+                <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+                  andal & skalabel
+                </span>{" "}
+                untuk pertumbuhan bisnis.
+              </motion.h2>
+
+              <motion.p
+                variants={item}
+                className="mt-5 max-w-xl text-base text-slate-600 leading-7"
+              >
+                PT Nusanet Media Mandiri menyediakan solusi IT dan
+                telekomunikasi yang fokus pada kinerja, keamanan, dan
+                skalabilitas. Dipercaya organisasi yang mengutamakan
+                reliabilitas layanan.
+              </motion.p>
+
+              {/* Stats — pill minimal */}
+              <motion.ul
+                variants={item}
+                className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm"
+              >
                 {[
-                  { k: "Pengalaman", v: "8 Tahun" },
-                  { k: "Project", v: "600+" },
-                  { k: "Client", v: "300+" },
-                  { k: "Solusi Bisnis", v: "Ribuan" },
+                  { k: "Tim ahli", v: "Berpengalaman" },
+                  { k: "Support", v: "Respon cepat" },
+                  { k: "Keandalan", v: "SLA jelas" },
+                  { k: "Skalabilitas", v: "Siap tumbuh" },
                 ].map((it) => (
-                  <div
+                  <li
                     key={it.k}
-                    className="rounded-xl border border-slate-200 bg-white p-6 text-center shadow-lg"
+                    className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-3 py-1.5 hover:border-orange-200 transition-colors"
                   >
-                    <div className="text-sm font-semibold text-indigo-500">
-                      {it.v}
-                    </div>
-                    <div className="mt-2 text-xs text-slate-500">{it.k}</div>
-                  </div>
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-500" />
+                    <span className="font-semibold text-slate-900">{it.v}</span>
+                    <span className="text-slate-500">{it.k}</span>
+                  </li>
                 ))}
+              </motion.ul>
+            </motion.div>
+
+            {/* Kanan — Ilustrasi */}
+            {/* Kanan — Ilustrasi */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.98 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.35 }}
+              transition={{ duration: 0.9 }}
+              className="order-1 lg:order-2 lg:pr-16 xl:pr-24 2xl:pr-32"
+            >
+              <div className="relative mx-auto w-full max-w-[680px]">
+                <div className="aspect-square w-full rounded-2xl  bg-white flex items-center justify-center p-6">
+                  <Lottie
+                    animationData={mobile}
+                    loop={true}
+                    className="w-full h-full"
+                  />
+                </div>
+
+                {/* Soft ring glow */}
+                <div className="hidden sm:block pointer-events-none absolute inset-0 -z-10  place-items-center">
+                  <div className="h-[280px] w-[280px] rounded-full bg-orange-200/35 blur-[110px]" />
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
-          {/* Right: visual placeholder (tetap minimal) */}
+          {/* Divider gradient tipis */}
+          <div className="mt-16 h-px w-full bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         </section>
 
-        {/* ===== 2) MISSION & VISION (row) ===== */}
-        <section className="flex flex-col gap-6 lg:flex-row">
-          {/* Mission */}
-          <div className="group flex-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition will-change-transform hover:-translate-y-0.5">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-indigo-700">
-                {/* target icon */}
-                <svg viewBox="0 0 24 24" className="h-5 w-5">
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="8"
-                    className="stroke-current"
-                    strokeWidth="1.6"
-                    fill="none"
-                  />
-                  <circle cx="12" cy="12" r="3" className="fill-current" />
-                </svg>
-              </span>
-              <h3 className="text-xl font-semibold leading-7 text-indigo-600">
-                Misi Kami
-              </h3>
-            </div>
-            <p className="mt-3 text-sm text-gray-600 leading-7">
-              Terus berinvestasi dalam penelitian dan pengembangan, serta
-              meningkatkan kapasitas sumber daya manusia agar selalu siap dan
-              unggul dalam menghadapi perkembangan terbaru di industri IT dan
-              telekomunikasi.
-            </p>
-            <ul className="mt-4 grid gap-2 text-sm text-gray-600 leading-7">
-              <Li>Riset dan pengembangan berkelanjutan.</Li>
-              <Li>Peningkatan kompetensi SDM.</Li>
-              <Li>Penerapan teknologi terbaru.</Li>
-            </ul>
-          </div>
+        {/* ========== 2) VISION & MISSION ========== */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:pl-16 xl:pl-24 2xl:pl-32 lg:pr-16 xl:pr-24 2xl:pr-32">
+          {/* Misi */}
+          <motion.article
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative ps-5"
+          >
+            {/* Accent line kiri */}
+            <span className="absolute inset-y-0 left-0 w-[3px] rounded-full bg-gradient-to-b from-orange-500 to-orange-300" />
+            <motion.h3
+              variants={item}
+              className="text-xl font-semibold text-slate-900"
+            >
+              Misi Kami
+            </motion.h3>
+            <motion.p
+              variants={item}
+              className="mt-2 text-sm text-slate-600 leading-7"
+            >
+              Investasi berkelanjutan pada R&amp;D dan kapabilitas tim agar
+              selalu unggul mengikuti perkembangan teknologi.
+            </motion.p>
+            <motion.ul
+              variants={item}
+              className="mt-3 space-y-2.5 text-sm text-slate-700"
+            >
+              <Li>Riset dan pengembangan berkelanjutan</Li>
+              <Li>Peningkatan kompetensi SDM</Li>
+              <Li>Penerapan teknologi terbaru</Li>
+            </motion.ul>
+          </motion.article>
 
-          {/* Vision */}
-          <div className="group flex-1 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition will-change-transform hover:-translate-y-0.5">
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-indigo-700">
-                {/* compass icon */}
-                <svg viewBox="0 0 24 24" className="h-5 w-5">
-                  <circle
-                    cx="12"
-                    cy="12"
-                    r="8"
-                    className="stroke-current"
-                    strokeWidth="1.6"
-                    fill="none"
-                  />
-                  <path
-                    d="M10 10l6-2-2 6-6 2 2-6z"
-                    className="stroke-current"
-                    strokeWidth="1.6"
-                    fill="none"
-                  />
-                </svg>
-              </span>
-              <h3 className="text-xl font-semibold leading-7 text-indigo-600">
-                Visi Kami
-              </h3>
-            </div>
-            <p className="mt-3 text-sm text-gray-600 leading-7">
-              Sebagai perusahaan yang peduli terhadap kemajuan teknologi di
-              Indonesia, kami terus berinvestasi dalam penelitian dan
-              pengembangan, serta meningkatkan kapasitas SDM kami agar selalu
-              berada di garis depan dalam menghadapi perkembangan terbaru dalam
-              industri IT dan telekomunikasi.
-            </p>
-            <ul className="mt-4 grid gap-2 text-sm text-gray-600 leading-7">
-              <Li>
-                Mendorong adopsi teknologi mutakhir di berbagai sektor industri.
-              </Li>
-              <Li>
-                Berperan aktif dalam membentuk ekosistem digital yang
-                berkelanjutan.
-              </Li>
+          {/* Visi */}
+          <motion.article
+            variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            className="relative ps-5"
+          >
+            <span className="absolute inset-y-0 left-0 w-[3px] rounded-full bg-gradient-to-b from-orange-500 to-orange-300" />
+            <motion.h3
+              variants={item}
+              className="text-xl font-semibold text-slate-900"
+            >
+              Visi Kami
+            </motion.h3>
+            <motion.p
+              variants={item}
+              className="mt-2 text-sm text-slate-600 leading-7"
+            >
+              Menjadi penggerak adopsi teknologi mutakhir dan bagian dari
+              ekosistem digital Indonesia yang berkelanjutan.
+            </motion.p>
+            <motion.ul
+              variants={item}
+              className="mt-3 space-y-2.5 text-sm text-slate-700"
+            >
+              <Li>Mendorong adopsi teknologi mutakhir</Li>
+              <Li>Berperan dalam ekosistem digital berkelanjutan</Li>
               <Li>Menjadi pemimpin inovatif</Li>
-            </ul>
-          </div>
-        </section>
-
-        {/* ===== 3) OUR SERVICES (row) ===== */}
-        <section className="flex flex-col gap-10 lg:flex-row ">
-          {/* Left intro */}
-          <div className="flex-1 flex items-center flex-col">
-            <div className="inline-flex items-center gap-2 text-xl font-semibold leading-7 text-indigo-600">
-              Layanan Kami
-            </div>
-            <h3 className="mt-4 text-3xl font-semibold tracking-tight">
-              Layanan modular,{" "}
-              <span className="text-indigo-700">tinggal pilih</span> sesuai
-              kebutuhan.
-            </h3>
-            <p className="mt-6 max-w-md min-w-[70%] text-sm text-gray-600 leading-7 text-center">
-              Kami menawarkan solusi layanan internet untuk perusahaan Anda.
-              Layanan internet berkecepatan tinggi yang stabil dengan SLA Uptime
-              sampai dengan 99.9%. Selain layanan internet kami juga menyediakan
-              berbagai solusi bisnis berbasis teknologi untuk kebutuhan
-              perusahaan Anda.
-            </p>
-          </div>
+            </motion.ul>
+          </motion.article>
         </section>
       </main>
-    </div>
+    </section>
   );
 }
 
-/* Tiny bullet component (for minimalist lists) */
+/* Bullet minimalis dengan hover micro-interaction */
 function Li({ children }) {
   return (
-    <div className="flex items-start gap-2">
-      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-indigo-600/80" />
+    <div className="group flex items-start gap-2">
+      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-orange-500 transition-transform group-hover:scale-125" />
       <span>{children}</span>
     </div>
   );
