@@ -3,7 +3,7 @@ import { Dialog, DialogPanel, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
-  { name: "Home", href: "#home" },
+  { name: "Beranda", href: "#home" },
   { name: "Tentang", href: "#about" },
   { name: "Harga", href: "#price" },
   { name: "Layanan", href: "#produk" },
@@ -48,7 +48,7 @@ export default function Header() {
                 href="#home"
                 className="inline-flex items-center gap-2 p-1.5 shrink-0"
               >
-                <span className="text-base font-semibold text-gray-900">
+                <span className="text-lg font-bold text-gray-900">
                   Nusameri
                 </span>
               </a>

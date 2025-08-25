@@ -45,27 +45,38 @@ export default function Hero() {
               <span className="inline-block h-2 w-2 rounded-full bg-orange-500" />
               ISP &amp; Managed Service • Enterprise Ready
             </motion.div>
-            <motion.h1
-              variants={item}
-              className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight"
-            >
-              <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
-                Solusi Internet & IT
-              </span>{" "}
-              Terbaik
-              <span className="block text-gray-600 text-[0.9em] font-normal mt-3">
+            <motion.div variants={item} className="max-w-3xl">
+              {/* Title */}
+              <motion.h1
+                variants={item}
+                className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900"
+              >
+                <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
+                  Solusi Internet & IT
+                </span>{" "}
+                Terbaik
+              </motion.h1>
+
+              {/* Subtitle */}
+              <motion.h2
+                variants={item}
+                className="mt-3 text-lg sm:text-xl lg:text-2xl text-gray-700 font-medium"
+              >
                 Jaringan stabil, aman, dan siap mendukung pertumbuhan bisnis
-                Anda.
-              </span>
-            </motion.h1>
-            <motion.p
-              variants={item}
-              className="mt-6 text-base sm:text-lg text-gray-600 max-w-2xl"
-            >
-              Dengan infrastruktur handal dan dukungan tim profesional,
-              operasional perusahaan Anda tetap efisien dan produktif setiap
-              saat.
-            </motion.p>
+                Anda
+              </motion.h2>
+
+              {/* Description */}
+              <motion.p
+                variants={item}
+                className="mt-6 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed"
+              >
+                Dengan infrastruktur handal dan dukungan tim profesional,
+                operasional perusahaan Anda tetap efisien dan produktif setiap
+                saat.
+              </motion.p>
+            </motion.div>
+
             <motion.div
               variants={item}
               className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center lg:items-start gap-3 sm:gap-4"

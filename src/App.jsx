@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Tentang from "./components/Tentang";
 import Harga from "./components/Harga";
