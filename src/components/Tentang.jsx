@@ -1,5 +1,5 @@
 import React from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import mobile from "../animations/No_Mobile_Internet.json";
 import Lottie from "lottie-react";
 
@@ -11,8 +11,6 @@ import Lottie from "lottie-react";
  */
 
 export default function Tentang() {
-  const prefersReduced = useReducedMotion();
-
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -38,7 +36,6 @@ export default function Tentang() {
           <motion.div
             aria-hidden
             className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-[conic-gradient(from_180deg,theme(colors.orange.200/30),transparent_50%)] blur-[80px]"
-            animate={prefersReduced ? undefined : { rotate: [0, 20, 0] }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           />
 
