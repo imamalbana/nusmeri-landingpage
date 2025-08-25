@@ -8,7 +8,7 @@ import Hero from "./components/Hero";
 import Header from "./components/Header";
 import "./App.css";
 
-export default function Example() {
+export default function App() {
   return (
     <div className="bg-white">
       <Header />
