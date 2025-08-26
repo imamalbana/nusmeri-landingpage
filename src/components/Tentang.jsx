@@ -110,7 +110,7 @@ export default function Tentang() {
               className="order-1 lg:order-2 lg:pr-16 xl:pr-24 2xl:pr-32"
             >
               <div className="relative mx-auto w-full max-w-[680px]">
-                <div className="aspect-square w-full rounded-2xl  bg-white flex items-center justify-center p-6">
+                <div className="aspect-square w-full rounded-2xl   flex items-center justify-center p-6">
                   <Lottie
                     animationData={mobile}
                     loop={true}
