@@ -117,11 +117,6 @@ export default function Tentang() {
                     className="w-full h-full"
                   />
                 </div>
-
-                {/* Soft ring glow */}
-                <div className="hidden sm:block pointer-events-none absolute inset-0 -z-10  place-items-center">
-                  <div className="h-[280px] w-[280px] rounded-full bg-orange-200/35 blur-[110px]" />
-                </div>
               </div>
             </motion.div>
           </div>
