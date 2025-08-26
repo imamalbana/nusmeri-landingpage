@@ -7,7 +7,6 @@ const navigation = [
   { name: "Tentang", href: "#about" },
   { name: "Harga", href: "#price" },
   { name: "Layanan", href: "#produk" },
-  { name: "Testimoni", href: "#testimoni" },
 ];
 
 export default function Header() {
