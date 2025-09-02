@@ -101,7 +101,6 @@ export default function Tentang() {
             </motion.div>
 
             {/* Kanan — Ilustrasi */}
-            {/* Kanan — Ilustrasi */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}

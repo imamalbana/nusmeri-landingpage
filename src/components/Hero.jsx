@@ -24,32 +24,30 @@ export default function Hero() {
   return (
     <motion.section
       id="home"
-      className="relative isolate overflow-hidden bg-white text-gray-900 h-screen flex items-center"
+      className="relative isolate overflow-hidden bg-white text-gray-900 min-h-screen flex flex-col justify-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.35 }}
     >
-      {/* Full-bleed container */}
-      <div className="w-full px-4 sm:px-6 lg:px-0 py-10 sm:py-14 lg:py-0">
+      <div className="w-full px-4 sm:px-6 lg:px-0 py-10 sm:py-14 lg:py-0 max-w-full">
         <motion.div
           variants={container}
           className="grid items-center gap-8 lg:gap-12 lg:grid-cols-2"
         >
-          {/* Kiri: Headline + Deskripsi + CTA */}
-          <div className="order-2 lg:order-1 lg:pl-16 xl:pl-24 2xl:pl-32">
-            {/* Eyebrow / badge */}
+          {/* Kiri */}
+          <div className="order-2 lg:order-1 lg:pl-16 xl:pl-24 2xl:pl-32 text-center lg:text-left">
             <motion.div
               variants={item}
-              className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white px-3 py-1 text-xs font-medium text-orange-700 shadow-sm"
+              className="inline-flex items-center justify-center lg:justify-start gap-2 rounded-full border border-orange-200 bg-white px-3 py-1 text-xs font-medium text-orange-700 shadow-sm mb-4"
             >
               <span className="inline-block h-2 w-2 rounded-full bg-orange-500" />
               ISP &amp; Managed Service • Enterprise Ready
             </motion.div>
-            <motion.div variants={item} className="max-w-3xl">
-              {/* Title */}
+
+            <motion.div variants={item} className="max-w-3xl mx-auto lg:mx-0">
               <motion.h1
                 variants={item}
-                className="mt-4 text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900"
+                className="mt-4 text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900"
               >
                 <span className="bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
                   Solusi Internet & IT
@@ -57,7 +55,6 @@ export default function Hero() {
                 Terbaik
               </motion.h1>
 
-              {/* Subtitle */}
               <motion.h2
                 variants={item}
                 className="mt-3 text-lg sm:text-xl lg:text-2xl text-gray-700 font-medium"
@@ -66,10 +63,9 @@ export default function Hero() {
                 Anda
               </motion.h2>
 
-              {/* Description */}
               <motion.p
                 variants={item}
-                className="mt-6 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed"
+                className="mt-6 text-base sm:text-lg text-gray-600 max-w-2xl leading-relaxed mx-auto lg:mx-0"
               >
                 Dengan infrastruktur handal dan dukungan tim profesional,
                 operasional perusahaan Anda tetap efisien dan produktif setiap
@@ -113,7 +109,8 @@ export default function Hero() {
                 </span>
               </motion.a>
             </motion.div>
-            <ul className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl text-sm">
+
+            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl text-sm mx-auto lg:mx-0">
               <motion.li variants={item} className="flex items-start gap-2">
                 <span className="text-orange-500">✓</span>
                 <div>
@@ -131,13 +128,13 @@ export default function Hero() {
             </ul>
           </div>
 
-          {/* Kanan: Ilustrasi */}
+          {/* Kanan */}
           <motion.div
             variants={item}
             className="order-1 lg:order-2 lg:pr-16 xl:pr-24 2xl:pr-32"
           >
             <motion.div
-              className="relative mx-auto w-full max-w-[700px] flex items-center justify-center"
+              className="relative mx-auto w-full max-w-[90%] sm:max-w-[600px] flex items-center justify-center"
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               whileHover={{ y: -6, rotate: -0.5 }}
@@ -147,8 +144,6 @@ export default function Hero() {
                 loop
                 className="w-full max-w-[600px] h-auto"
               />
-
-              {/* Glow background */}
               <div className="hidden sm:block absolute right-0 top-10 h-[320px] w-[320px] pointer-events-none -z-10 bg-orange-300/40 blur-[120px] rounded-full" />
             </motion.div>
           </motion.div>
